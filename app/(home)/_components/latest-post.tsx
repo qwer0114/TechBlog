@@ -3,7 +3,6 @@ import Post from "@/components/common/Post";
 
 async function LatestPost() {
   const posts = await getLatestPosts(5);
-  console.log(posts[0]);
 
   return (
     <section>
