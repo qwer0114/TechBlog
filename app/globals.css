@@ -123,3 +123,190 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Notion 블록 스타일 */
+@layer components {
+  /* 블록 컨테이너 */
+  .notion-blocks {
+    @apply space-y-4;
+  }
+
+  .notion-block {
+    @apply leading-relaxed;
+  }
+
+  .notion-block-children {
+    @apply ml-6 mt-2 space-y-2;
+  }
+
+  /* 단락 */
+  .notion-paragraph {
+    @apply text-base text-gray-800 dark:text-gray-200 leading-7;
+  }
+
+  /* 제목 */
+  .notion-heading_1 {
+    @apply text-3xl font-bold text-gray-900 dark:text-white mt-8 mb-4 leading-tight;
+  }
+
+  .notion-heading_2 {
+    @apply text-2xl font-bold text-gray-900 dark:text-white mt-6 mb-3 leading-tight;
+  }
+
+  .notion-heading_3 {
+    @apply text-xl font-semibold text-gray-900 dark:text-white mt-4 mb-2 leading-tight;
+  }
+
+  /* 리스트 */
+  .notion-bulleted_list_item {
+    @apply text-gray-800 dark:text-gray-200 leading-7;
+    list-style-type: disc;
+    margin-left: 1.5rem;
+  }
+
+  .notion-numbered_list_item {
+    @apply text-gray-800 dark:text-gray-200 leading-7;
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+  }
+
+  /* 인용구 */
+  .notion-quote {
+    @apply border-l-4 border-gray-300 dark:border-gray-600 pl-4 py-2 my-4 italic text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-[#1f2937] rounded-r;
+  }
+
+  /* 코드 블록 */
+  .notion-code {
+    @apply my-6 rounded-xl overflow-hidden bg-gray-900 dark:bg-[#0d1117];
+  }
+
+  .notion-code pre {
+    @apply p-6 overflow-x-auto;
+  }
+
+  .notion-code code {
+    @apply text-sm font-mono text-gray-100;
+    font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  }
+
+  .notion-code-caption {
+    @apply px-6 py-3 text-sm text-gray-400 bg-gray-800 dark:bg-[#161b22] border-t border-gray-700;
+  }
+
+  /* 인라인 코드 */
+  .inline-code {
+    @apply px-1.5 py-0.5 rounded bg-gray-100 dark:bg-[#282e39] text-pink-600 dark:text-pink-400 text-sm font-mono;
+  }
+
+  /* Callout */
+  .notion-callout {
+    @apply flex gap-3 p-4 my-4 rounded-xl;
+  }
+
+  .notion-callout-default {
+    @apply bg-gray-50 dark:bg-[#1f2937] border border-gray-200 dark:border-gray-700;
+  }
+
+  .notion-callout-gray_background {
+    @apply bg-gray-100 dark:bg-[#1f2937] border border-gray-200 dark:border-gray-700;
+  }
+
+  .notion-callout-blue_background {
+    @apply bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800;
+  }
+
+  .notion-callout-yellow_background {
+    @apply bg-yellow-50 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-800;
+  }
+
+  .notion-callout-red_background {
+    @apply bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800;
+  }
+
+  .notion-callout-green_background {
+    @apply bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800;
+  }
+
+  .notion-callout-icon {
+    @apply text-2xl shrink-0;
+  }
+
+  .notion-callout-content {
+    @apply flex-1 text-gray-800 dark:text-gray-200;
+  }
+
+  /* 구분선 */
+  .notion-divider {
+    @apply my-8 border-gray-200 dark:border-gray-700;
+  }
+
+  /* 이미지 */
+  .notion-image {
+    @apply my-6 rounded-xl overflow-hidden;
+  }
+
+  .notion-image img {
+    @apply w-full h-auto;
+  }
+
+  .notion-image-caption {
+    @apply mt-2 text-sm text-center text-gray-600 dark:text-gray-400;
+  }
+
+  /* 북마크 */
+  .notion-bookmark {
+    @apply block p-4 my-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1a1f2e] hover:border-gray-300 dark:hover:border-gray-600 transition-all;
+  }
+
+  .notion-bookmark-title {
+    @apply text-blue-600 dark:text-blue-400 font-medium mb-1;
+  }
+
+  .notion-bookmark-caption {
+    @apply text-sm text-gray-600 dark:text-gray-400;
+  }
+
+  /* 토글 */
+  .notion-toggle {
+    @apply my-2;
+  }
+
+  .notion-toggle summary {
+    @apply cursor-pointer text-gray-800 dark:text-gray-200 font-medium hover:text-gray-600 dark:hover:text-gray-400 transition-colors;
+  }
+
+  /* To-Do */
+  .notion-to-do {
+    @apply flex items-start gap-2 my-2;
+  }
+
+  .notion-to-do input[type="checkbox"] {
+    @apply mt-1 cursor-default;
+  }
+
+  .notion-to-do-checked {
+    @apply line-through text-gray-500 dark:text-gray-500;
+  }
+
+  /* 링크 스타일 */
+  .notion-blocks a {
+    @apply text-blue-600 dark:text-blue-400 hover:underline;
+  }
+
+  /* 텍스트 스타일링 */
+  .notion-blocks strong {
+    @apply font-bold text-gray-900 dark:text-white;
+  }
+
+  .notion-blocks em {
+    @apply italic;
+  }
+
+  .notion-blocks u {
+    @apply underline;
+  }
+
+  .notion-blocks s {
+    @apply line-through;
+  }
+}

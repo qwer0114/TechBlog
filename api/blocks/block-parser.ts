@@ -243,17 +243,19 @@ export class NotionBlockParser {
    * 블록 배열을 파싱합니다.
    */
   static parseBlocks(blocks: any[]): BlockWithMetadata[] {
-    return blocks
-      .map((block) => {
-        const parsedBlock = this.parseBlock(block);
-        if (!parsedBlock) return null;
+    const parsedBlocks: BlockWithMetadata[] = [];
 
-        return {
+    for (const block of blocks) {
+      const parsedBlock = this.parseBlock(block);
+      if (parsedBlock) {
+        parsedBlocks.push({
           id: block.id,
           block: parsedBlock,
           children: [],
-        };
-      })
-      .filter((block): block is BlockWithMetadata => block !== null);
+        });
+      }
+    }
+
+    return parsedBlocks;
   }
 }
